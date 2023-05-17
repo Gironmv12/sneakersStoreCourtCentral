@@ -1,0 +1,67 @@
+use courtcentral;
+
+select * from productos;
+select * from proveedores;
+select * from clientes;
+select * from ventas;
+select * from detalleventa;
+select * from usuarios;
+
+INSERT INTO Proveedores (Nombre, Direccion, Telefono, Email) VALUES ('Decorplast de México', 'Matriz Av. San Luis Tlatilco No. 34 Parque Industrial Naucalpan México, Edo. Méx', '5553006006', 'Decorplast@hotmail.com');
+INSERT INTO Proveedores (Nombre, Direccion, Telefono, Email) 
+VALUES 
+('Proveedor A', 'Calle 1 No. 123, Colonia Centro, Ciudad de México, México', '5551234567', 'proveedora@example.com'),
+('Proveedor B', 'Avenida 2 No. 456, Colonia Industrial, Guadalajara, México', '3337654321', 'proveedorb@example.com'),
+('Proveedor C', 'Calle 3 Sur No. 789, Colonia San Juan, Puebla, México', '2229876543', 'proveedorc@example.com'),
+('Proveedor D', 'Avenida 4 Norte No. 1011, Colonia Centro, Mérida, México', '9998765432', 'proveedord@example.com'),
+('Proveedor E', 'Calle 5 No. 1213, Colonia Obrera, Monterrey, México', '8181234567', 'proveedore@example.com'),
+('Proveedor F', 'Avenida 6 No. 1415, Colonia Del Valle, Ciudad de México, México', '5559876543', 'proveedorf@example.com'),
+('Proveedor G', 'Calle 7 No. 1617, Colonia Las Américas, Tijuana, México', '6642345678', 'proveedorg@example.com'),
+('Proveedor H', 'Avenida 8 No. 1819, Colonia La Paz, Querétaro, México', '4428765432', 'proveedorh@example.com'),
+('Proveedor I', 'Calle 9 No. 2021, Colonia Nueva, Guadalajara, México', '3334567890', 'proveedori@example.com');
+
+INSERT INTO PRODUCTOS (Nombre_del_producto, Talla, Precio_del_producto, Cantidad)
+VALUES ('Tenis Nike Air Max', 8, 1499.99, 25),
+       ('Tenis Adidas Ultraboost', 7, 1899.99, 15),
+       ('Tenis Puma Smash v2', 9, 799.99, 35),
+       ('Tenis Reebok Classic', 8, 999.99, 20),
+       ('Tenis New Balance 574', 10, 1299.99, 10),
+       ('Tenis Skechers Go Run', 9, 899.99, 30),
+       ('Tenis Asics Gel-Kayano', 7, 1599.99, 15),
+       ('Tenis Under Armour HOVR', 8, 1399.99, 25),
+       ('Tenis Brooks Ghost', 7, 1299.99, 20),
+       ('Tenis Salomon Speedcross', 9, 1899.99, 10),
+       ('Tenis Nike Air Force 1', 8, 1199.99, 30),
+       ('Tenis Adidas Originals Superstar', 7, 1399.99, 25),
+       ('Tenis Puma RS-2K', 9, 1099.99, 20),
+       ('Tenis Reebok Zig Kinetica', 8, 1499.99, 15),
+       ('Tenis New Balance Fresh Foam', 10, 999.99, 30),
+       ('Tenis Skechers DLites', 9, 799.99, 35),
+       ('Tenis Asics Gel-Nimbus', 7, 1699.99, 15),
+       ('Tenis Under Armour Charged Pursuit', 8, 899.99, 25),
+       ('Tenis Brooks Glycerin', 7, 1599.99, 20),
+       ('Tenis Salomon XA Pro 3D', 9, 2099.99, 10),
+       ('Tenis Nike React Infinity Run', 8, 1799.99, 15),
+       ('Tenis Adidas Ultraboost 21', 7, 2199.99, 10),
+       ('Tenis Puma Future Rider', 9, 999.99, 25),
+       ('Tenis Reebok Nano X', 8, 1299.99, 20),
+       ('Tenis New Balance FuelCell Propel', 10, 1499.99, 15),
+       ('Tenis Skechers Elite Flex', 9, 699.99, 30),
+       ('Tenis Asics Gel-Quantum', 7, 1899.99, 20),
+       ('Tenis Under Armour HOVR Phantom', 8, 1599.99, 10),
+       ('Tenis Brooks Launch', 7, 1199.99, 30),
+       ('Tenis Salomon S/LAB', 9, 2399.99, 5);
+
+-- INSERTAMOS LOS CLIENTES
+ALTER TABLE Clientes MODIFY COLUMN Direccion VARCHAR(250) NULL;
+INSERT INTO Clientes (Nombre, RFC, CURP, Telefono, Email, Direccion, ClienteDescuento) VALUES
+('Juan Pérez', 'PERJ810913UI1', 'PERJ810913HMCRRN05', '5551234567', 'juanperez@gmail.com', 'Av. Revolución 123, Col. Centro, CDMX', 0),
+('Ana García', 'GARA891023UI2', 'GARA891023MMCRRN01', '5559876543', 'anagarcia@hotmail.com', 'Calle 5 de Mayo 456, Col. Juárez, CDMX', 10),
+('Carlos López', 'LOPC840719UI3', 'LOPC840719HMCRRN02', '5558765432', 'carloslopez@yahoo.com', 'Av. Insurgentes 789, Col. Roma, CDMX', 5),
+('María Torres', 'TORM900315UI4', 'TORM900315MMCRRN03', '5557654321', 'mariatorres@outlook.com', 'Calle Reforma 234, Col. Condesa, CDMX', 10),
+('Pedro Sánchez', 'SAPD870512UI5', 'SAPD870512HMCRRN04', '5556543210', 'pedrosanchez@gmail.com', 'Av. Cuauhtémoc 345, Col. Narvarte, CDMX', 0),
+('Sofía Rodríguez', 'RODS931126UI6', 'RODS931126MMCRRN06', '5555432109', 'sofiarodriguez@hotmail.com', 'Calle Xola 567, Col. Del Valle, CDMX', 15),
+('Luisa Martínez', 'MAML880711UI7', 'MAML880711HMCRRN07', '5554321098', 'luisamartinez@yahoo.com', 'Av. Universidad 678, Col. Copilco, CDMX', 0),
+('Javier Ramírez', 'RAJJ750428UI8', 'RAJJ750428HMCRRN08', '5553210987', 'javierramirez@outlook.com', 'Calle Eje Central 789, Col. Doctores, CDMX', 5),
+('Gabriel Hernández', 'HEGG800301UI9', 'HEGG800301HMCRRN09', '5552109876', 'gabrielhernandez@gmail.com', 'Av. Tlalpan 890, Col. Del Carmen, CDMX', 10),
+('Fernanda Flores', 'FOLF950211UI0', 'FOLF950211MMCRRN10', '5551098765', 'fernandaflores@hotmail.com', 'Calle Paseo de la Reforma 1234, Col. Santa Fe, CDMX', 15);
